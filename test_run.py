@@ -1,1 +1,0 @@
-print('hello! You are able to run python in this system.')
