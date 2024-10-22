@@ -1,0 +1,479 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Python Essentials Refresher\n",
+    "Before diving into OOP, let's review some Python essentials, including data types and control structures."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Input/Output\n",
+    "* Use `input()` to get user input.\n",
+    "* Use `print()` to output text to the console.\n",
+    "\n",
+    "```python\n",
+    "name = input(\"Enter your name: \")  # Takes user input\n",
+    "print(f\"Hello, {name}!\")  # Outputs a message\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "name = input(\"Enter your name: \")  # Takes user input\n",
+    "print(f\"Hello, {name}!\")  # Outputs a message"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Comments\n",
+    "Comments in Python begin with a `#` symbol. They are ignored by the Python interpreter and are useful for adding notes or explanations within your code.\n",
+    "\n",
+    "```python\n",
+    "# This is a comment\n",
+    "x = 10  # This is an inline comment"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Data Types\n",
+    "\n",
+    "Python supports various data types such as integers, strings, lists, dictionaries, and tuples. Python's data types are foundational for managing any kind of data. In banking, you deal with data such as customer names (strings), transaction amounts (floats or integers), and account details (dictionaries). Understanding these types will help you build efficient systems."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Basic Data Types\n",
+    "\n",
+    "# Integer\n",
+    "integer_var = 10 \n",
+    "# Float \n",
+    "float_var = 10.5 \n",
+    " \n",
+    "# String\n",
+    "string_var = 'Hello, World!'  \n",
+    "# Boolean\n",
+    "boolean_var = True  \n",
+    "\n",
+    "# Print the types\n",
+    "print(type(integer_var))\n",
+    "print(type(float_var))\n",
+    "print(type(string_var))\n",
+    "print(type(boolean_var))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "In Python, tuples, dictionaries, and lists are three essential data structures used to store collections of data. Let’s break them down with examples to understand their differences and use cases.\n",
+    "\n",
+    "- **List**: An ordered, mutable collection.\n",
+    "- **Dictionary**: A collection of key-value pairs.\n",
+    "- **Tuple**: An ordered, immutable collection.\n",
+    "\n",
+    "Lists and Dictionaries\n",
+    "- **Lists:** \n",
+    "    ```python\n",
+    "    my_list = [1, 2, 3]\n",
+    "    my_list[0]  # Accessing elements by index\n",
+    "    my_list.append(4)  # Add item\n",
+    "    my_list.insert(0, 'zero') # Inserting at a specific position\n",
+    "    my_list.remove('zero')  # Removing an element by value\n",
+    "    ```\n",
+    "- **Dictionaries:**\n",
+    "    ```python\n",
+    "    my_dict = {'key1': 'value1', 'key2': 'value2'}\n",
+    "    my_dict['key3'] = 'value3'  # Add key-value pair\n",
+    "    del my_dict['key3'] # Removing an element\n",
+    "    ```\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_list = [1, 2, 3]\n",
+    "my_list[0]  # Accessing elements by index\n",
+    "my_list.append(4)  # Add item\n",
+    "my_list.insert(0, 'zero') # Inserting at a specific position\n",
+    "my_list.remove('zero')  # Removing an element by value\n",
+    "\n",
+    "my_dict = {'key1': 'value1', 'key2': 'value2'}\n",
+    "my_dict['key3'] = 'value3'  # Add key-value pair\n",
+    "del my_dict['key3'] # Removing an element"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example of a list, dictionary, and tuple\n",
+    "transactions = ['Deposit', 'Withdrawal', 'Transfer']  # List\n",
+    "customer_info = {\n",
+    "    'name': 'Alice', \n",
+    "    'age': 30,\n",
+    "    'province': 'Tarlac',\n",
+    "    'balance': 700\n",
+    "    }  # Dictionary\n",
+    "account_types = (\"Savings\", \"Checking\", \"Business\")  # Tuple\n",
+    "\n",
+    "print(transactions)\n",
+    "print(customer_info)\n",
+    "print(account_types)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "| Data Type | Description                                | Example                |\n",
+    "|-----------|--------------------------------------------|------------------------|\n",
+    "| `int`     | Integer numbers, whole numbers             | `age = 30`             |\n",
+    "| `float`   | Floating-point numbers, decimal values     | `height = 5.9`         |\n",
+    "| `str`     | Strings, a sequence of characters          | `name = \"John\"`        |\n",
+    "| `bool`    | Boolean values, either `True` or `False` | `is_student = False`   |\n",
+    "| `list`    | Ordered, mutable collection of items      | `fruits = [\"apple\", \"banana\", \"cherry\"]` |\n",
+    "| `tuple`   | Ordered, immutable collection of items     | `coordinates = (10.0, 20.0)` |\n",
+    "| `dict`    | Unordered, mutable collection of key-value pairs | `student = {\"name\": \"Alice\", \"age\": 25}` |\n",
+    "| `set`     | Unordered collection of unique items      | `unique_numbers = {1, 2, 3}` |\n",
+    "| `NoneType`| Represents the absence of a value         | `x = None`             |\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Conditional Operators\n",
+    "\n",
+    "Conditional operators allow you to compare values in Python. They return a Boolean (`True` or `False`) and are often used in control structures like `if` statements.\n",
+    "\n",
+    "#### Conditional Operators Table\n",
+    "\n",
+    "| Python Operator | Description              | Example   | Result                                    | SQL Equivalent         |\n",
+    "|-----------------|--------------------------|-----------|-------------------------------------------|------------------------|\n",
+    "| `==`            | Equal to                 | `x == y`  | `True` if `x` is equal to `y`             | `x = y`                |\n",
+    "| `!=`            | Not equal to             | `x != y`  | `True` if `x` is not equal to `y`         | `x <> y` or `x != y`   |\n",
+    "| `>`             | Greater than             | `x > y`   | `True` if `x` is greater than `y`         | `x > y`                |\n",
+    "| `<`             | Less than                | `x < y`   | `True` if `x` is less than `y`            | `x < y`                |\n",
+    "| `>=`            | Greater than or equal to | `x >= y`  | `True` if `x` is greater than or equal to `y` | `x >= y`           |\n",
+    "| `<=`            | Less than or equal to    | `x <= y`  | `True` if `x` is less than or equal to `y` | `x <= y`           |\n",
+    "\n",
+    "---\n",
+    "\n",
+    "#### Combining Conditions Table\n",
+    "\n",
+    "You can combine multiple conditions using **logical operators** in Python, which have SQL equivalents for filtering data in databases.\n",
+    "\n",
+    "| Python Logical Operator | Description              | Example in Python | Result                                     | SQL Equivalent             |\n",
+    "|-------------------------|--------------------------|-------------------|--------------------------------------------|----------------------------|\n",
+    "| `and`                   | All conditions must be true | `x > 10 and y < 5` | `True` if both conditions are `True`       | `WHERE x > 10 AND y < 5`   |\n",
+    "| `or`                    | At least one condition must be true | `x > 10 or y < 5` | `True` if at least one condition is `True` | `WHERE x > 10 OR y < 5`    |\n",
+    "| `not`                   | Negates the condition     | `not x == 10`      | `True` if `x` is not equal to `10`         | `WHERE NOT x = 10`         |\n",
+    "\n",
+    "---\n",
+    "\n",
+    "#### Examples for Conditional Operators"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x = 10\n",
+    "y = 10\n",
+    "\n",
+    "x == y # returns True \n",
+    "x != y # False\n",
+    "x > y # False"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Indentation\n",
+    "Python uses indentation (usually 4 spaces) to define blocks of code.\n",
+    "\n",
+    "```python\n",
+    "if x > 0:\n",
+    "    print(\"x is positive\")  # This line is indented"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### **Basic Control Structures**\n",
+    "Control structures help us manage the flow of our program. Here are examples of if statements and loops.\n",
+    "\n",
+    "- `if`, `else`, `elif` for conditional logic.\n",
+    "- Loops (`for`, `while`).\n",
+    "- List comprehension as a powerful shortcut for creating lists.\n",
+    "\n",
+    "- **Conditional Statements:**\n",
+    "  - Syntax:\n",
+    "    ```python\n",
+    "    if condition:\n",
+    "        # code block\n",
+    "    elif another_condition:\n",
+    "        # code block\n",
+    "    else:\n",
+    "        # code block\n",
+    "    ```\n",
+    "  - Example:\n",
+    "    ```python\n",
+    "    if balance >= amount:\n",
+    "        # proceed with withdrawal\n",
+    "    else:\n",
+    "        print(\"Insufficient funds!\")\n",
+    "    ```\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# If Statement\n",
+    "age = 25\n",
+    "if age >= 18:\n",
+    "    print('Adult')\n",
+    "else:\n",
+    "    print('Minor')\n",
+    "\n",
+    "# For Loop\n",
+    "for i in range(5):\n",
+    "    print(i)\n",
+    "\n",
+    "# While Loop\n",
+    "count = 0\n",
+    "while count < 5:\n",
+    "    print(count)\n",
+    "    count += 1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "- **Loops:**\n",
+    "\n",
+    "    Loops are used to execute a block of code repeatedly. Python supports two main types of loops: `for` loops and `while` loops.\n",
+    "  - **For Loop:**\n",
+    "    \n",
+    "    The `for` loop is used to iterate over a sequence (such as a list, tuple, string, or range).\n",
+    "    \n",
+    "      ```python\n",
+    "      for item in iterable:\n",
+    "          # code block\n",
+    "      ```\n",
+    "  - **While Loop:**\n",
+    "\n",
+    "    The `while` loop continues to execute as long as the specified condition is `True`.\n",
+    "\n",
+    "      ```python\n",
+    "      while condition:\n",
+    "          # code block\n",
+    "      ```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### Print number from 0 to 4\n",
+    "\n",
+    "# for loop with range()\n",
+    "for i in range(5): \n",
+    "    print(i)\n",
+    "\n",
+    "# for loop with list\n",
+    "my_list = [0,1,2,3,4]\n",
+    "for i in my_list:\n",
+    "    print(i)\n",
+    "\n",
+    "# while loop\n",
+    "count = 0\n",
+    "while (count<5):\n",
+    "    print(count)\n",
+    "    count = count+1"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### List Comprehension:\n",
+    "List comprehension is a Python feature to create new lists by transforming elements of an existing list. It’s particularly useful in business analysis for filtering or transforming large data sets."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Example of list comprehension\n",
+    "squares = [x**2 for x in range(10)]\n",
+    "print(squares)  # Outputs: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Functions\n",
+    "\n",
+    "Functions are reusable blocks of code that perform a specific task. They help organize your code, reduce repetition, and improve readability. In Python, functions are defined using the `def` keyword.\n",
+    "\n",
+    "* To define a function, use the `def` keyword followed by the function name and parentheses. You can also define parameters inside the parentheses.\n",
+    "* Functions can accept parameters (inputs) that allow you to pass values when calling the function. You can also define default parameter values.\n",
+    "* The return statement is used to send back a result from a function. When a function returns a value, you can store it in a variable.\n",
+    "\n",
+    "Example: Defining a Simple Function"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def greet(name):\n",
+    "    print(f\"Hello, {name}!\")  # This function prints a greeting message\n",
+    "\n",
+    "\n",
+    "def add(value1, value2):\n",
+    "    sum = value1+value2\n",
+    "    return sum # This function returns the value in the variable\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Exercise**: Create a function called:\n",
+    "1. `display_info` - that takes two parameters: the customer's name and their current balance. The function should print the customer's name and balance in a clear format.\n",
+    "2. `deposit` - takes two parameters: the current balance and the deposit amount. The function should add the deposit amount to the balance and return the updated balance. Make sure deposit amount is greater than zero.\n",
+    "3. `withdraw` - that takes two parameters: the current balance and the amount to withdraw. The function should subtract the withdrawal amount from the balance and return the updated balance. Make sure the withdrawal amount does not exceed the current balance."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# create a function that prints the name of a person and tells how much money they have\n",
+    "# the format must be: \n",
+    "#       Hi PERSON! You have AMOUNT Pesos in your account.\n",
+    "\n",
+    "person = 'Mykhal'\n",
+    "amount = 100\n",
+    "# add your code below\n",
+    "def display_info(person, amount):\n",
+    "    print(f'Hi {person}! You have {amount} Pesos in your account')\n",
+    "\n",
+    "\n",
+    "# Test the function\n",
+    "display_info(person,amount)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# function to deposit\n",
+    "\n",
+    "def deposit(balance,amount):\n",
+    "    if amount>0:\n",
+    "        return balance+amount\n",
+    "    else:\n",
+    "        print('Nothing deposited')\n",
+    "        return balance\n",
+    "\n",
+    "# Test the function\n",
+    "current_balance = deposit(1000,1)\n",
+    "print(current_balance)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# function to withdraw\n",
+    "\n",
+    "def withdraw(balance,amount):\n",
+    "    if amount<balance:\n",
+    "        return balance-amount\n",
+    "    else:\n",
+    "        print('Insufficient funds!')\n",
+    "        return balance\n",
+    "\n",
+    "# Test the function\n",
+    "current_balance = withdraw(1500,1000)\n",
+    "print(current_balance)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "---"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
