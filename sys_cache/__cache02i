@@ -409,7 +409,7 @@
     "    def get_customer_by_id(self, customer_id):\n",
     "        for customer in self.customers:\n",
     "            if customer.customer_id == customer_id:\n",
-    "                return customer.display_info()\n",
+    "                return customer\n",
     "        return \"Customer not found.\""
    ]
   },
