@@ -86,7 +86,7 @@ The entire tutorial is beginner-friendly and assumes some prior scripting experi
 1. Download the notebook files in the `workbook` folder:
     - `01_refresher.ipynb`
     - `02_oop.ipynb`
-    - `03_visualizations.ipynb` (to follow)
+    - `03_visualizations.ipynb`
 2. Open the `ipynb` in Jupyter Notebook or JupyterLab.
 3. Follow along with the two-session tutorial, running code cells in sequence.
 
