@@ -5,6 +5,15 @@
 
 ###
 
+def main_menu():
+    print("\n--- Bank System ---")
+    print("1. Add Customer")
+    print("2. Deposit Money")
+    print("3. Withdraw Money")
+    print("4. Show All Customers")
+    print("5. Log Transactions")
+    print("6. Exit")
+    return input("Select an option: ")
 
 
 def run_banking_system():
